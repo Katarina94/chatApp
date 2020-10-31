@@ -1,0 +1,10 @@
+.Home {
+  box-sizing: border-box;
+  width: 90vw;
+  height: 90vh;
+  margin: 50px;
+  display: grid;
+  grid-template-columns: 30% calc(70% - 10px);
+  grid-gap: 10px;
+  background-color: whitesmoke;
+}

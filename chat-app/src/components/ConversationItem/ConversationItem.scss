@@ -1,0 +1,35 @@
+.ConversationItem {
+  box-sizing: border-box;
+  height: 100px;
+  overflow: hidden;
+  background-color: #205470;
+  color: white;
+  border-bottom: 1px solid #141f27;
+  position: relative;
+  padding: 5px;
+  &-selected {
+    color: white;
+    box-sizing: border-box;
+    height: 100px;
+    overflow: hidden;
+    border-bottom: 1px solid #141f27;
+    position: relative;
+    padding: 5px;
+    background-color: #1b394a;
+  }
+
+  &__avatar {
+    height: 100%;
+    display: inline-block;
+    border-radius: 50%;
+  }
+
+  &__user-name {
+    position: absolute;
+    top: 50%;
+    left: 120px;
+    transform: translateY(-50%);
+    font-size: 20px;
+    margin: 0;
+  }
+}

@@ -1,0 +1,25 @@
+.SendBar {
+  margin: 50px 0;
+  &__input {
+    font-size: 16px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 90%;
+    border: none;
+    border-radius: 5px;
+    &:focus {
+      outline: none;
+    }
+  }
+  &__submit {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    font-weight: bold;
+    box-sizing: border-box;
+    width: 10%;
+    &:focus {
+      outline: none;
+    }
+  }
+}
