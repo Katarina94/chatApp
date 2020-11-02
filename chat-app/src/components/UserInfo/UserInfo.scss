@@ -17,4 +17,7 @@
   &__name {
     font-size: 32px;
   }
+  @media only screen and (max-device-width: 600px) {
+    display: none;
+  }
 }

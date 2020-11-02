@@ -12,12 +12,6 @@ const Message = ({ message, index }) => {
   const participantId = useSelector(getMessageParticipantId(index));
   const userId = useSelector(getUserId);
 
-  console.log(
-    `${new Date(message.created_at).getHours()}:${new Date(
-      message.created_at
-    ).getMinutes()}`
-  );
-
   const test = () => {
     var date = new Date(message.created_at);
     return date.toLocaleTimeString("en-EN", {
@@ -27,8 +21,6 @@ const Message = ({ message, index }) => {
       minute: "2-digit",
     });
   };
-
-  console.log("DATE", test());
 
   return (
     <div

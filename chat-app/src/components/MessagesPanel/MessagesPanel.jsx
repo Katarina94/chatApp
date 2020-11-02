@@ -15,13 +15,13 @@ import messagesActions from "store/actions/messagesActions";
 import {
   getMessages,
   getConversationId,
+  getMessageParticipant,
 } from "store/selectors/messagesSelectors";
-import { getUser } from "store/selectors/userSelectors";
 
 const MessagesPanel = () => {
   const messages = useSelector(getMessages);
   const id = useSelector(getConversationId);
-  const participant = useSelector(getUser);
+  const participant = useSelector(getMessageParticipant);
   if (!id) {
     return <UserInfo />;
   }

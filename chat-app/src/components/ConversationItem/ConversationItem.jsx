@@ -21,7 +21,7 @@ const ConversationItem = ({ conversation }) => {
   };
 
   const onChatSelect = () => {
-    messagesActions.fetchMessages(id);
+    messagesActions.fetchMessages(id, participant);
   };
 
   return (

@@ -1,4 +1,6 @@
 .ConversationItem {
+  @media only screen and (max-device-width: 600px) {
+  }
   box-sizing: border-box;
   height: 100px;
   overflow: hidden;

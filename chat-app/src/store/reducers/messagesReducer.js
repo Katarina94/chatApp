@@ -7,10 +7,13 @@ import {
   sendMessageAction,
   sendMessageSuccessAction,
   sendMessageFailAction,
+  clearMessagesAction,
 } from "store/actionCreators/messagesActionCreators";
+import { initialState } from "./rootReducer";
 
 export const messagesInitialState = {
   conversationId: null,
+  participant: null,
   conversation: {
     isLoading: false,
     isLoaded: false,
@@ -27,7 +30,8 @@ export const messagesInitialState = {
 
 const messagesReducer = createReducer(messagesInitialState, {
   [fetchMessagesAction.type]: (state, action) => {
-    state.conversationId = action.payload;
+    state.conversationId = action.payload.id;
+    state.participant = action.payload.participant;
     state.conversation.isLoading = true;
   },
   [fetchMessagesSuccessAction.type]: (state, action) => {
@@ -55,6 +59,9 @@ const messagesReducer = createReducer(messagesInitialState, {
   [sendMessageFailAction.type]: (state, action) => {
     const error = action.payload;
     state.newMessage.error = error;
+  },
+  [clearMessagesAction.type]: () => {
+    return messagesInitialState;
   },
 });
 

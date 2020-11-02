@@ -1,12 +1,41 @@
 .MessageHeader {
-  position: absolute;
-  background-color: #1b394a;
-  color: white;
-  width: 100%;
-  top: 0;
-  box-sizing: border-box;
-  display: grid;
-  grid-template-columns: 50% 50%;
+  @media only screen and (max-device-width: 600px) {
+    &-mobile {
+      display: block;
+    }
+    &-desktop {
+      display: none;
+    }
+    &__back-arrow {
+      display: inline-block;
+      border: solid black;
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      transform: rotate(135deg);
+      -webkit-transform: rotate(135deg);
+    }
+  }
+  @media only screen and (min-device-width: 600px) {
+    &-desktop {
+      display: block;
+    }
+    &-mobile {
+      display: none;
+    }
+  }
+
+  &__wrapper {
+    position: absolute;
+    background-color: #1b394a;
+    color: white;
+    width: 100%;
+    top: 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 5% 50%;
+  }
+
   &__participant-sender {
     box-sizing: border-box;
     padding: 5px;
@@ -22,13 +51,58 @@
     display: grid;
     grid-template-columns: 80% 20%;
   }
+
   &__avatar {
+    position: absolute;
     height: 100%;
+    top: 50%;
+    transform: translateY(-50%);
     border-radius: 50%;
+    &-sender {
+      left: 0;
+    }
+    &-user {
+      right: 0;
+    }
+    &-holder {
+      box-sizing: border-box;
+      height: 90px;
+      position: relative;
+    }
+    &-inner-holder {
+      overflow: hidden;
+      padding-top: 81.1%;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &-outer-holder {
+      position: relative;
+      height: 90px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   &__participant-name {
     font-size: 20px;
     margin: auto 0;
   }
+}
+.arrow-holder {
+  position: relative;
+  height: 100px;
+}
+.arrow {
+  margin-left: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  // transform: translate(-50%, -50%);
+  padding: 10px; /* Arrow size */
+  border: solid white;
+  border-width: 0 0 3px 3px;
+}
+.arrow-left {
+  transform: translate(-50%, -50%) rotate(45deg);
 }

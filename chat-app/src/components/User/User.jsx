@@ -1,14 +1,18 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 /* Styles */
 import "./User.scss";
 
 /* Hooks */
 import { useGetUser } from "hooks/userHook";
+/* Selectors */
+import { isConversationSelected } from "store/selectors/messagesSelectors";
 
 const User = () => {
   const user = useGetUser();
-  if (!user) return null;
+  const conversationOpen = useSelector(isConversationSelected);
+  if (!user || conversationOpen) return null;
   return (
     <div className="User" data-testid="user">
       <img

@@ -17,5 +17,9 @@ export const getMessages = createSelector(
   getConversation,
   (conversation) => conversation.messages
 );
+export const getMessageParticipant = createSelector(
+  getMessagesState,
+  (messages) => messages.participant
+);
 export const getMessageParticipantId = (index) =>
   createSelector(getMessages, (messages) => messages[index].participant?.id);

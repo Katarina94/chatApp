@@ -14,3 +14,5 @@ export const sendMessageSuccessAction = createAction(
 export const sendMessageFailAction = createAction(
   "[MESSAGE] Send Message Fail"
 );
+
+export const clearMessagesAction = createAction("[MESSAGE] Clear Messages");

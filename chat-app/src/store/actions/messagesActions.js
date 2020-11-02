@@ -6,8 +6,9 @@ import * as actionCreators from "store/actionCreators/messagesActionCreators";
 
 const { dispatch } = store;
 
-const fetchMessages = async (id) => {
-  dispatch(actionCreators.fetchMessagesAction(id));
+const fetchMessages = async (id, participant) => {
+  console.log("aaa", participant);
+  dispatch(actionCreators.fetchMessagesAction({ id, participant }));
   try {
     const response = await getMessages(id);
     dispatch(actionCreators.fetchMessagesSuccessAction({ id, response }));
@@ -26,7 +27,12 @@ const sendMessage = async (id, content) => {
   }
 };
 
+const clearMessages = () => {
+  dispatch(actionCreators.clearMessagesAction());
+};
+
 export default {
   fetchMessages,
   sendMessage,
+  clearMessages,
 };

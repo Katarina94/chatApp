@@ -1,4 +1,9 @@
 .Sidebar {
+  @media only screen and (max-device-width: 600px) {
+    &-selected {
+      display: none;
+    }
+  }
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
