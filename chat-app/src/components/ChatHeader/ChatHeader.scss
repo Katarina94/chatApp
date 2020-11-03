@@ -1,0 +1,107 @@
+.ChatHeader {
+  cursor: pointer;
+  &__participant {
+    box-sizing: border-box;
+    padding: 5px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 20% 80%;
+    &-name {
+      font-size: 20px;
+      margin: auto 0;
+    }
+  }
+  &__arrow {
+    margin-left: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 10px;
+    border: solid white;
+    border-width: 0 0 3px 3px;
+    &-holder {
+      position: relative;
+      height: 100px;
+    }
+    &-left {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+  }
+  &__wrapper {
+    position: absolute;
+    background-color: #1b394a;
+    color: white;
+    width: 100%;
+    top: 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 5% 50%;
+  }
+  &__avatar {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    border-radius: 50%;
+    &-holder {
+      box-sizing: border-box;
+      height: 90px;
+      position: relative;
+    }
+    &-inner-holder {
+      overflow: hidden;
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &-outer-holder {
+      position: relative;
+      height: 90px;
+      top: 50%;
+    }
+  }
+  @media only screen and (min-device-width: 1025px) {
+    &-desktop {
+      display: block;
+    }
+    &-mobile {
+      display: none;
+    }
+    &__wrapper {
+      grid-template-columns: 5% 50%;
+    }
+    &__avatar {
+      transform: translateY(-50%);
+      &-inner-holder {
+        padding-top: 81.1%;
+      }
+
+      &-outer-holder {
+        transform: translateY(-50%);
+      }
+    }
+  }
+  @media only screen and (max-device-width: 1024px) {
+    &-mobile {
+      display: block;
+    }
+    &-desktop {
+      display: none;
+    }
+    &__wrapper {
+      grid-template-columns: 10% 90%;
+    }
+    &__avatar {
+      left: 50%;
+      transform: translate(-50%, -50%);
+      &-inner-holder {
+        padding-top: 52.35%;
+      }
+
+      &-outer-holder {
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

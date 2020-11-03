@@ -2,15 +2,15 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 /* Styles */
-import "./ConversationItem.scss";
+import "./ChatItem.scss";
 
-/* Components */
-import Button from "components/Button/Button";
-
+/* Selectors */
 import { getConversationId } from "store/selectors/messagesSelectors";
+
+/*Actions */
 import messagesActions from "store/actions/messagesActions";
 
-const ConversationItem = ({ conversation }) => {
+const ChatItem = ({ conversation }) => {
   const { participants, id } = conversation;
   const participant = participants[1];
 
@@ -26,22 +26,19 @@ const ConversationItem = ({ conversation }) => {
 
   return (
     <div
-      className={
-        isSelected() ? "ConversationItem-selected" : "ConversationItem"
-      }
-      data-testid="conversation-item"
+      className={`ChatItem${isSelected() ? " ChatItem-selected" : ""}`}
       onClick={onChatSelect}
     >
       <img
         src={participant.avatar_url}
         alt="User Avatar"
-        className={"ConversationItem__avatar"}
+        className={"ChatItem__avatar"}
       />
-      <p className={"ConversationItem__user-name"}>
+      <p className={"ChatItem__user-name"}>
         {participant.first_name} {participant.last_name}
       </p>
     </div>
   );
 };
 
-export default ConversationItem;
+export default ChatItem;

@@ -4,7 +4,6 @@
     font-size: 16px;
     padding: 10px;
     box-sizing: border-box;
-    width: 90%;
     border: none;
     border-radius: 5px;
     &:focus {
@@ -12,14 +11,41 @@
     }
   }
   &__submit {
+    box-sizing: border-box;
     border: none;
     background-color: transparent;
     font-size: 16px;
     font-weight: bold;
     box-sizing: border-box;
-    width: 10%;
+    color: white;
+    padding: 10px;
+    margin-left: 5px;
+    background-color: #1b394a;
+    border-radius: 5px;
+    cursor: pointer;
+    &:disabled {
+      cursor: initial;
+      background-color: transparent;
+      color: dimgray;
+    }
     &:focus {
       outline: none;
+    }
+  }
+  @media only screen and (min-device-width: 1025px) {
+    &__input {
+      width: 85%;
+    }
+    &__submit {
+      width: calc(15% - 5px);
+    }
+  }
+  @media only screen and (max-device-width: 1024px) {
+    &__input {
+      width: 80%;
+    }
+    &__submit {
+      width: calc(20% - 5px);
     }
   }
 }

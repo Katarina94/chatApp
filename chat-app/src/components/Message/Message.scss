@@ -1,0 +1,38 @@
+.Message {
+  &__wrapper {
+    box-sizing: border-box;
+    border-radius: 5px;
+    font-size: 16px;
+    word-wrap: break-word;
+    width: max-content;
+    margin-bottom: 2px;
+  }
+  &-user {
+    background-color: #ccd6dd;
+    margin-left: auto;
+  }
+  &-participant {
+    background-color: #55acee;
+  }
+  &__content {
+    padding: 10px 10px 5px;
+    margin: 0;
+  }
+  &__timestamp {
+    text-align: right;
+    font-size: 12px;
+    padding: 3px 10px;
+    color: #252433;
+    margin: 0;
+  }
+  @media only screen and (min-device-width: 1025px) {
+    &__wrapper {
+      max-width: 90%;
+    }
+  }
+  @media only screen and (max-device-width: 1024px) {
+    &__wrapper {
+      max-width: 80%;
+    }
+  }
+}

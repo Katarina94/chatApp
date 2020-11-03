@@ -5,15 +5,17 @@ import "./SendBar.scss";
 
 const SendBar = ({ onSendMessage }) => {
   const [message, setMessage] = useState("");
-  console.log("new message", message);
+
   const onInputChange = (e) => {
     setMessage(e.target.value);
   };
+
   const onSubmitMessage = (e) => {
     e.preventDefault();
     onSendMessage(message);
     setMessage("");
   };
+
   return (
     <div className="SendBar">
       <form onSubmit={onSubmitMessage}>

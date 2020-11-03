@@ -2,11 +2,8 @@ import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
-/* Styles */
-import "./App.scss";
-
 /* Pages */
-import Home from "pages/Home/Home";
+import Home from "pages/Home";
 
 /* Store */
 import store from "store/index";

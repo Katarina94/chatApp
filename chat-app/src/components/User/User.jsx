@@ -6,6 +6,7 @@ import "./User.scss";
 
 /* Hooks */
 import { useGetUser } from "hooks/userHook";
+
 /* Selectors */
 import { isConversationSelected } from "store/selectors/messagesSelectors";
 
@@ -14,15 +15,11 @@ const User = () => {
   const conversationOpen = useSelector(isConversationSelected);
   if (!user || conversationOpen) return null;
   return (
-    <div className="User" data-testid="user">
-      <img
-        src={user.avatar_url}
-        alt="User Avatar"
-        className={"ConversationItem__avatar"}
-      />
-      <p className={"User__name"}>
-        {user.first_name} {user.last_name}
-      </p>
+    <div className="User">
+      <img src={user.avatar_url} alt="User Avatar" className={"User__avatar"} />
+      <div className={"User__text-Holder"}>
+        <p className={"User__name"}>Welcome back, {user.first_name}</p>
+      </div>
     </div>
   );
 };

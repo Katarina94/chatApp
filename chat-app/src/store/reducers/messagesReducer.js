@@ -30,8 +30,9 @@ export const messagesInitialState = {
 
 const messagesReducer = createReducer(messagesInitialState, {
   [fetchMessagesAction.type]: (state, action) => {
-    state.conversationId = action.payload.id;
-    state.participant = action.payload.participant;
+    const { conversationId, participant } = action.payload;
+    state.conversationId = conversationId;
+    state.participant = participant;
     state.conversation.isLoading = true;
   },
   [fetchMessagesSuccessAction.type]: (state, action) => {

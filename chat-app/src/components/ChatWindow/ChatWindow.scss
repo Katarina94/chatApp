@@ -1,0 +1,33 @@
+.ChatWindow {
+  display: flex;
+  flex-direction: column-reverse;
+  position: relative;
+  width: 100%;
+  height: 90vh;
+
+  &__messages-wrapper {
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+    padding: 0 8%;
+    margin-top: 100px;
+    height: 100%;
+    &-inner {
+      padding-top: 50px;
+    }
+  }
+  @media only screen and (min-device-width: 1025px) {
+    border-left: 3px solid #55acee;
+    &__messages-wrapper {
+      padding: 0 8%;
+      &-inner {
+        padding-top: 50px;
+      }
+    }
+  }
+  @media only screen and (max-device-width: 1024px) {
+    &__messages-wrapper {
+      padding: 0 10px;
+    }
+  }
+}

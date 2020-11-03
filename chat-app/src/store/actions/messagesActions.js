@@ -6,14 +6,15 @@ import * as actionCreators from "store/actionCreators/messagesActionCreators";
 
 const { dispatch } = store;
 
-const fetchMessages = async (id, participant) => {
-  console.log("aaa", participant);
-  dispatch(actionCreators.fetchMessagesAction({ id, participant }));
+const fetchMessages = async (conversationId, participant) => {
+  dispatch(actionCreators.fetchMessagesAction({ conversationId, participant }));
   try {
-    const response = await getMessages(id);
-    dispatch(actionCreators.fetchMessagesSuccessAction({ id, response }));
+    const response = await getMessages(conversationId);
+    dispatch(
+      actionCreators.fetchMessagesSuccessAction({ conversationId, response })
+    );
   } catch (error) {
-    dispatch(actionCreators.fetchMessagesFailAction(error, id));
+    dispatch(actionCreators.fetchMessagesFailAction(error, conversationId));
   }
 };
 

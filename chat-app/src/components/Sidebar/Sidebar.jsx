@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import "./Sidebar.scss";
 
 /* Components */
-import ConversationItem from "components/ConversationItem/ConversationItem";
+import ChatItem from "components/ChatItem";
 
 /* Hooks */
 import { useConversations } from "hooks/conversationsHook";
@@ -18,10 +18,10 @@ const Sidebar = () => {
   const conversationOpen = useSelector(isConversationSelected);
   if (!conversations) return null;
   return (
-    <div className={`Sidebar ${!conversationOpen ? "" : "Sidebar-selected"}`}>
+    <div className={`Sidebar${!conversationOpen ? "" : " Sidebar-selected"}`}>
       <div className="Sidebar__wrapper">
         {conversations.map((conversation) => (
-          <ConversationItem conversation={conversation} key={conversation.id} />
+          <ChatItem conversation={conversation} key={conversation.id} />
         ))}
       </div>
     </div>

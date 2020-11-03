@@ -5,15 +5,15 @@ import "./Home.scss";
 
 /* Components */
 import Sidebar from "components/Sidebar";
-import MessagesPanel from "components/MessagesPanel/MessagesPanel";
-import User from "components/User/User";
+import ChatWindow from "components/ChatWindow";
+import User from "components/User";
 
 const Home = () => {
   return (
-    <div className="Home" data-testid="home-page">
+    <div className="Home">
       <User />
       <Sidebar />
-      <MessagesPanel />
+      <ChatWindow />
     </div>
   );
 };

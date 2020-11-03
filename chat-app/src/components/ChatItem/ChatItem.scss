@@ -1,22 +1,16 @@
-.ConversationItem {
-  @media only screen and (max-device-width: 600px) {
-  }
+.ChatItem {
   box-sizing: border-box;
   height: 100px;
   overflow: hidden;
-  background-color: #205470;
-  color: white;
-  border-bottom: 1px solid #141f27;
+  background-color: #ccd6dd;
+  color: black;
+  border-bottom: 1px solid gray;
   position: relative;
   padding: 5px;
+  cursor: pointer;
   &-selected {
     color: white;
-    box-sizing: border-box;
-    height: 100px;
-    overflow: hidden;
     border-bottom: 1px solid #141f27;
-    position: relative;
-    padding: 5px;
     background-color: #1b394a;
   }
 
