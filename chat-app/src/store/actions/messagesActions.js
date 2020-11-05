@@ -31,9 +31,10 @@ const sendMessage = async (id, content) => {
 const clearMessages = () => {
   dispatch(actionCreators.clearMessagesAction());
 };
-
-export default {
+const messagesActions = {
   fetchMessages,
   sendMessage,
   clearMessages,
 };
+
+export default messagesActions;

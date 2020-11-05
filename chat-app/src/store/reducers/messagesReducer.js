@@ -9,7 +9,6 @@ import {
   sendMessageFailAction,
   clearMessagesAction,
 } from "store/actionCreators/messagesActionCreators";
-import { initialState } from "./rootReducer";
 
 export const messagesInitialState = {
   conversationId: null,

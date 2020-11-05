@@ -15,6 +15,8 @@ const fetchCoversations = async () => {
   }
 };
 
-export default {
+const conversationActions = {
   fetchCoversations,
 };
+
+export default conversationActions;

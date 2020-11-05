@@ -15,6 +15,8 @@ const fetchUser = async () => {
   }
 };
 
-export default {
+const userActions = {
   fetchUser,
 };
+
+export default userActions;

@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
 
 /* Styles */
 import "./ChatItem.scss";
@@ -11,10 +12,12 @@ import { getConversationId } from "store/selectors/messagesSelectors";
 import messagesActions from "store/actions/messagesActions";
 
 const ChatItem = ({ conversation }) => {
+  const selectedChatId = useSelector(getConversationId);
+
+  if (!conversation) return null;
+
   const { participants, id } = conversation;
   const participant = participants[1];
-
-  const selectedChatId = useSelector(getConversationId);
 
   const isSelected = () => {
     return selectedChatId === id;
@@ -39,6 +42,25 @@ const ChatItem = ({ conversation }) => {
       </p>
     </div>
   );
+};
+
+ChatItem.propTypes = {
+  conversation: PropTypes.shape({
+    id: PropTypes.string,
+    messages_url: PropTypes.string,
+    participants: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string,
+        avatar_url: PropTypes.string,
+        first_name: PropTypes.string,
+        last_name: PropTypes.string,
+      })
+    ),
+  }),
+};
+
+ChatItem.defaultProps = {
+  conversation: {},
 };
 
 export default ChatItem;

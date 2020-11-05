@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 /* Styles */
 import "./ChatHeader.scss";
@@ -10,6 +11,7 @@ const ChatHeader = ({ participant }) => {
   const onCloseConversation = () => {
     messagesActions.clearMessages();
   };
+
   return (
     <div className="ChatHeader" onClick={onCloseConversation}>
       <div className="ChatHeader__wrapper">
@@ -35,6 +37,19 @@ const ChatHeader = ({ participant }) => {
       </div>
     </div>
   );
+};
+
+ChatHeader.propTypes = {
+  participant: PropTypes.shape({
+    id: PropTypes.string,
+    avatar_url: PropTypes.string,
+    first_name: PropTypes.string,
+    last_name: PropTypes.string,
+  }),
+};
+
+ChatHeader.defaultProps = {
+  participant: {},
 };
 
 export default ChatHeader;

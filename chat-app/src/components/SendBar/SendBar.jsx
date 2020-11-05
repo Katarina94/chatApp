@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import PropTypes from "prop-types";
 
 /* Styles */
 import "./SendBar.scss";
@@ -35,6 +36,10 @@ const SendBar = ({ onSendMessage }) => {
       </form>
     </div>
   );
+};
+
+SendBar.propTypes = {
+  onSendMessage: PropTypes.func,
 };
 
 export default SendBar;
